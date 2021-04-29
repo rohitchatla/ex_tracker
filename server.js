@@ -49,7 +49,8 @@ const userSchema = new mongoose.Schema({
 //  create a model of this schema
 const User = mongoose.model("User", userSchema);
 
-app.route("/api/new-user").post((req, res) => {
+app.route("/api/users").post((req, res) => {
+  ///api/new-user
   // /api/users
   // if(req.body.username)
   User.findOne({ username: req.body.username }, (err, user) => {
@@ -72,6 +73,7 @@ app.get("/api/users", (req, res) => {
 });
 
 app.post("/api/exercise/add", (req, res) => {
+  // /api/users/:id/exercises
   const logger = {
     description: req.body.description,
     duration: req.body.duration,
@@ -111,8 +113,9 @@ app.get("/api/users/:id/logs", (req, res) => {
     });
 });
 
-app.get("/api/users/log" /*?{userId}[&from][&to][&limit]*/, (req, res) => {
+app.get("/api/users/logs" /*?{userId}[&from][&to][&limit]*/, (req, res) => {
   //http://localhost:3000/api/users/log?userId=22
+  ///api/users/:id/logs
   console.log(req.query);
   console.log(new Date(req.query.from).getTime());
   User.findById(req.query.userId)

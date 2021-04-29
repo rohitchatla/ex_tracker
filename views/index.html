@@ -20,13 +20,15 @@
       <h1>Exercise tracker</h1>
       <form action="/api/new-user" method="post">
         <h3>Create a New User</h3>
-        <p><code>POST /api/new-user</code></p>
+        <p><code>POST /api/users</code></p>
+        <!-- /api/new-user -->
         <input id="uname" type="text" name="username" placeholder="username" />
         <input type="submit" value="Submit" />
       </form>
       <form action="/api/exercise/add" method="post">
         <h3>Add exercises</h3>
         <p><code>POST /api/exercise/add</code></p>
+        <!-- // /api/users/:id/exercises -->
         <input id="uid" type="text" name="userId" placeholder="userId*" />
         <input
           id="desc"
@@ -49,9 +51,9 @@
         <input type="submit" value="Submit" />
       </form>
       <p>
-        <strong>GET users's exercise log: </strong
+        <strong>GET users's exercise logs: </strong
         ><code
-          >GET /api/users/log?{userId}[&amp;from][&amp;to][&amp;limit]</code
+          >GET /api/users/logs?{userId}[&amp;from][&amp;to][&amp;limit]</code
         >
       </p>
       <p><strong>{ }</strong> = required, <strong>[ ]</strong> = optional</p>
