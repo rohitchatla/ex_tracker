@@ -7,6 +7,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const mongoose = require("mongoose");
+
+console.log(process.env.mongoURI);
 mongoose.connect(process.env.mongoURI, (err) => {
   if (err) return err;
   console.log("Mongo is connected");
